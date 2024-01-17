@@ -18,11 +18,15 @@ import { Button } from "../ui/button";
 import { FormError } from "../form-error";
 import { FormSuccess } from "../form-success";
 import { login } from '@/actions/login';
-import { useTransition } from 'react';
+import { useState, useTransition } from 'react';
 
 
 export function LoginForm() {
   const [isPending, startTransition] = useTransition();
+  const [error, setError] = useState<string | undefined>("");
+  const [success, setSuccess] = useState<string | undefined>("");
+  
+  
   const form = useForm<z.infer<typeof LoginSchema>>({
     resolver: zodResolver(LoginSchema),
     defaultValues: {
@@ -34,6 +38,10 @@ export function LoginForm() {
   const onSubmit = (values: z.infer<typeof LoginSchema>) => {
     startTransition(() => {
       login(values)
+      .then((data) => {
+        setError(data.error);
+        setSuccess(data.success);
+      });          
     });
   }
   return (
