@@ -5,7 +5,7 @@
 
 
 export const publicRoutes = [
-"i"
+  "/"
 ];
 
 /*
@@ -15,8 +15,8 @@ The routes will redirect logged in users to /settings
 */
 
 export const authRoutes = [
-  "api/auth/login",
-  "api/auth/register",
+  "/auth/login",
+  "/auth/register",
 ];
 
 // The prefix for the api routes
