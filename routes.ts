@@ -5,7 +5,7 @@
 
 
 export const publicRoutes = [
-  "/"
+  "/",
 ];
 
 /*
@@ -23,7 +23,7 @@ export const authRoutes = [
 //Routes that start with this prefix are used for API authentication and authorization
 // @type {string}
 
-export const apiAuthPrefix = "api/auth";
+export const apiAuthPrefix = "/api/auth";
 
 /* 
 This is the default redirect path after the user has logged in
