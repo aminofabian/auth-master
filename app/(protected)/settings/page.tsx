@@ -5,10 +5,11 @@ async function SettingsPage() {
   return (
     <div>
     {JSON.stringify(session)}
-      <form action={async () => {
-        "user server";
-        await signOut();
-      }}>
+    <form action={async () => {
+      "use server";
+      
+      await signOut();
+    }}>
     <button type="submit">
     Sign Out
     </button>
