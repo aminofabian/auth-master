@@ -49,8 +49,7 @@ export function LoginForm() {
       .then((data) => {
         if (data) {
           setError(data.error);
-          // TODO: Add after whe add email 2fA
-          // setSuccess(data.success);
+          setSuccess(data?.success);
         }
       });
     });
