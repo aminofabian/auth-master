@@ -12,9 +12,9 @@ export const sendVerificationEmail = async (
     to: email,
     subject: "Verify your email",
     html: ` <p>Please click the link below to verify your email
-    <a href="${confirmLink}">${confirmLink}</a>
+    <a href="${confirmLink}">Click Here</a>
     
     </p>`
-  
+
   })
 }
